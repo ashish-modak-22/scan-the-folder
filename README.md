@@ -47,10 +47,14 @@ project/
 └── my_folder/
      ├── file1.txt
      ├── file2.txt
+```
+
+------------------------------
+
 
 # 📦 Installation & Setup
 
-## 1️⃣ Clone Repository
+ 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/ashish-modak-22/Folder_SnapShot_System.git
