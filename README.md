@@ -44,7 +44,7 @@ project/
 ├── main.py
 ├── snapshot.json
 │
-└── my_folder/
+└── testFolder/
      ├── file1.txt
      ├── file2.txt
 ```
