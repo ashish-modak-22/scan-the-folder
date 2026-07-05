@@ -90,25 +90,27 @@ def snapShotCompare(prevFile, newFile):
 
 
 
-# Folder to be monitored for file changes
-folderLocation = "testFolder"
+if __name__ == "__main__":
+    
+    # Folder to be monitored for file changes
+    folderLocation = "testFolder"
 
 
-# Create a snapshot of the folder's current state
-newSnapShot = snapShotCreate(folderLocation)
+    # Create a snapshot of the folder's current state
+    newSnapShot = snapShotCreate(folderLocation)
 
 
-# Compare with the previous snapshot if one exists
-if os.path.exists("snapshot.json"):
-    prevSnapShot = snapShotLoad("snapshot.json")
-    snapShotCompare(prevSnapShot, newSnapShot)
-else:
-    print("Previous snapshot is not found. New snapshot in progress...")
+    # Compare with the previous snapshot if one exists
+    if os.path.exists("snapshot.json"):
+        prevSnapShot = snapShotLoad("snapshot.json")
+        snapShotCompare(prevSnapShot, newSnapShot)
+    else:
+        print("Previous snapshot is not found. New snapshot in progress...")
 
 
-# Save the latest snapshot for future change detection
-snapShotSave(newSnapShot)
+    # Save the latest snapshot for future change detection
+    snapShotSave(newSnapShot)
 
 
-print("Snapshot saved successfully.")
+    print("Snapshot saved successfully.")
 
