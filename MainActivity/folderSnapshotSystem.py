@@ -41,23 +41,29 @@ def snapShotCreate(folderLocation):
 
 
 
+# Save the current folder snapshot as a JSON file for future comparison
 def snapShotSave(snapShotDict, fileName="snapshot.json"):
     with open(fileName, "w") as snapShotJson:
         json.dump(snapShotDict, snapShotJson, indent=3)
 
 
+# Load a previously saved folder snapshot from a JSON file 
 def snapShotLoad(fileName="snapshot.json"):
     with open(fileName, "r") as snapShotJson:
         return json.load(snapShotJson)
     
 
+# Compare two folder snapshots to detect added, modified and deleted files
 def snapShotCompare(prevFile, newFile):
+
+    # Check for newly added or modified files
     for file in newFile:
         if file not in prevFile:
             print(f"{file} is a newly added file.")
         elif newFile[file] != prevFile[file]:
             print(f"{file} has got some modifications.")
 
+    # Check for files that have been removed
     for file in prevFile:
         if file not in newFile:
             print(f"{file} is deleted")
