@@ -2,6 +2,8 @@ import os
 import json
 import hashlib
 
+
+# Generate the SHA-256 hash of a file by reading it in fixed-size chunks
 def hash_file(fileLocation):
     create_sha256 = hashlib.sha256()
 
