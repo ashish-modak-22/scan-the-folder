@@ -28,13 +28,17 @@ def hash_file(fileLocation):
 def snapShotCreate(folderLocation):
     snapShotDict = {}
 
+    # Generate a hash for every file in the target directory
     for file in os.listdir(folderLocation):
         fileLocation = os.path.join(folderLocation, file)
-        
+
+        # Ignore subdirectories and process only regular files
         if os.path.isfile(fileLocation):
             snapShotDict[file] = hash_file(fileLocation)
 
+    # Return the folder snapshot for future comparison
     return snapShotDict
+
 
 
 def snapShotSave(snapShotDict, fileName="snapshot.json"):
