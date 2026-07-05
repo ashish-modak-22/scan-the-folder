@@ -1,8 +1,16 @@
 # 📁 Folder Snapshot System
 
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SHA--256](https://img.shields.io/badge/SHA--256-005571?style=for-the-badge&logo=letsencrypt&logoColor=white)
+![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
+
 A Python-based file integrity monitoring tool that creates and compares folder snapshots using SHA-256 hashing.
 
 This project helps detect changes inside a folder by generating unique cryptographic hashes for every file and comparing them over time.
+
+</div>
 
 It can identify:
 
