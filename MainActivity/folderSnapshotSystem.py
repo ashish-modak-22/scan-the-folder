@@ -24,6 +24,7 @@ def hash_file(fileLocation):
 
 
 
+# Create a snapshot of the folder by mapping each file to its SHA-256 hash
 def snapShotCreate(folderLocation):
     snapShotDict = {}
 
