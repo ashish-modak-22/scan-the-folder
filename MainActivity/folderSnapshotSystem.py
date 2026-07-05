@@ -4,6 +4,10 @@ import hashlib
 
 
 
+# -----------------------------
+# FILE HASHING UTILITY
+# -----------------------------
+
 # Generate the SHA-256 hash of a file by reading it in fixed-size chunks
 def hash_file(fileLocation):
     create_sha256 = hashlib.sha256()
@@ -24,6 +28,10 @@ def hash_file(fileLocation):
 
 
 
+# -----------------------------
+# SNAPSHOT CREATION
+# -----------------------------
+
 # Create a snapshot of the folder by mapping each file to its SHA-256 hash
 def snapShotCreate(folderLocation):
     snapShotDict = {}
@@ -41,6 +49,10 @@ def snapShotCreate(folderLocation):
 
 
 
+# -----------------------------
+# SNAPSHOT STORAGE
+# -----------------------------
+
 # Save the current folder snapshot as a JSON file for future comparison
 def snapShotSave(snapShotDict, fileName="snapshot.json"):
     with open(fileName, "w") as snapShotJson:
@@ -53,7 +65,15 @@ def snapShotLoad(fileName="snapshot.json"):
         return json.load(snapShotJson)
     
 
-# Compare two folder snapshots to detect added, modified and deleted files
+
+# -----------------------------
+# SNAPSHOT COMPARISON
+# -----------------------------
+
+# Compare two snapshots to detect:
+# - New files
+# - Modified files
+# - Deleted files
 def snapShotCompare(prevFile, newFile):
 
     # Check for newly added or modified files
