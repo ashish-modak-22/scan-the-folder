@@ -3,19 +3,25 @@ import json
 import hashlib
 
 
+
 # Generate the SHA-256 hash of a file by reading it in fixed-size chunks
 def hash_file(fileLocation):
     create_sha256 = hashlib.sha256()
 
+    # Read the file incrementally to avoid loading large files into memory
     with open(fileLocation, "rb") as file:
         while True:
             file_data_chunk = file.read(65536)
 
             if not file_data_chunk:
                 break
+
+            # Update the hash with the current chunk of file data
             create_sha256.update(file_data_chunk)
 
+    # Return the final SHA-256 hash as a hexadecimal string
     return create_sha256.hexdigest()
+
 
 
 def snapShotCreate(folderLocation):
