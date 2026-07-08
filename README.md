@@ -122,3 +122,9 @@ So no additional `pip install` commands are needed.
 ```bash
 python main.py
 ```
+
+## 📄 License
+ 
+This project is open source and available under the [Apache License 2.0](License).
+
+---
